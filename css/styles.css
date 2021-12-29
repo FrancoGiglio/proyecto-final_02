@@ -1,0 +1,700 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Outfit', sans-serif;
+    background-color: #2A9D8F;
+}
+
+h2{
+    color: #E9C46A;
+    font-family: 'Prompt', sans-serif;
+    font-size: 2.75rem;
+    text-shadow: 0.25rem 0.25rem 0 #424242;
+    text-align: center;
+}
+
+h3{
+    font-family: 'Prompt', sans-serif;
+    font-size: 1.75rem;
+    color: #264653;
+}
+
+/* ================================================== */
+
+.general-grid{
+    display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        gap: 20px 20px;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer"
+        ;
+}
+
+/* ================================================== */
+
+/* HEADER */
+
+.header{
+    grid-area: header;
+    background: #264653;
+    background: linear-gradient(180deg, #264653 0%, #264653 95%, #2a9d8f 100%);
+    position: sticky;
+        top: 0;
+    z-index: 3; /* Para estár incluso sobre los botones del carrusel */
+}
+
+/* ========================= */
+
+/* HEADER NAVBAR */
+
+/* Modificación a la class="container-fluid" de Bootstrap */
+.header .container-fluid{
+    display: flex;
+        justify-content: center
+}
+
+/* ========== */
+
+/* Logo */
+
+/* Modificación a la class="navbar-brand" de Bootstrap */
+.header .container-fluid .navbar-brand{
+    margin: auto;
+}
+
+.logo__link--text{
+    color: white;
+    font-family: 'Prompt', sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-shadow: 0.25rem 0.25rem 0 #E9C46A;
+    text-align: center;
+}
+
+/* ========== */
+
+/* Botón hamburguesa */
+
+/* Modificación a la class="navbar-toggler" de Bootstrap */
+.header .container-fluid .navbar-toggler{
+    border-color: transparent;
+}
+
+/* ========== */
+
+/* Menú y Tienda */
+
+/* Modificación a la class="navbar-collapse" de Bootstrap */
+.header .container-fluid .navbar-collapse{
+        justify-content: space-between
+}
+
+/* ===== */
+
+/* Menú */
+
+.header-nav__menu{
+    background: #264653;
+    background: linear-gradient(90deg, #264653 0%, #e76f51 5%, #e76f51 95%, #264653 100%);
+    text-align: center;
+}
+
+.header-nav__menu--item{
+    margin: 0px 15px;
+}
+
+.header-nav__menu--item-link{
+    /* color: white; */
+    text-align: center;
+    font-family: 'Yellowtail', cursive;
+    font-size: 1.5rem;
+}
+
+.header-nav__menu--item-link:hover{
+    background: #992204;
+    background: linear-gradient(90deg, transparent 0%, #992204 5%, #992204 95%, transparent 100%);
+}
+
+/* ===== */
+
+/* Tienda */
+
+.header-nav__shop{
+    margin: 0 0 15px 0;
+    background: #264653;
+    background: linear-gradient(90deg, #264653 0%, #F4A261 5%, #F4A261 95%, #264653 100%);
+    text-align: center;
+}
+
+.header-nav__shop--item-link{
+    /* color: #002E3A; */
+    text-align: center;
+    font-family: 'Yellowtail', cursive;
+    font-size: 1.25rem;
+}
+
+.header-nav__shop--item-link:hover{
+    /* color: white; */
+    background: #8c3f01;
+    background: linear-gradient(90deg, transparent 0%, #8c3f01 5%, #8c3f01 95%, transparent 100%);
+}
+
+/* ================================================== */
+
+/* MAIN */
+
+.main{
+    grid-area: main;
+}
+
+/* ========================= */
+
+/* INDEX */
+
+.main-index{
+    width: 100%;
+    display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        gap: 10px 10px;
+        grid-template-areas:
+            "main-index__carousel"
+            "main-index__short-news"
+        ;
+}
+
+/* ========== */
+
+/* Carrusel de imágenes */
+
+.main-index__carousel{
+    grid-area: main-index__carousel;
+    background-color: #E9C46A;
+    border-top: 5px solid #E9C46A;
+    border-bottom: 5px solid #E9C46A;
+}
+
+
+/* Este resplandor lo pongo en el texto dentro del carrusel, porque sino no se lee bien */
+.glow{
+    text-shadow: 1px 1px 2px black, 0 0 1em #f4a261, 0 0 0.2em #e9c46a;
+}
+
+.carousel-item a:link{
+    text-decoration: none;
+    color: red;
+}
+
+.carousel-item a:visited{
+    color: #e9c46a;
+}
+
+.carousel-item a:active{
+    color: rgb(200, 0, 0);
+}
+
+/* ========== */
+
+/* Noticias cortas */
+
+.main-index__short-news{
+    grid-area: main-index__short-news;
+        justify-self: center;
+        align-self: center;
+}
+
+.main-index__short-news--articles{
+    display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+}
+
+/* Modificación a la class="card" de Bootstrap */
+.card{
+    margin: 20px;
+    background-color: #e9c46a;
+    border: inset 10px #e76f51;
+}
+
+.card-body h5{
+    font-family: 'Prompt', sans-serif;
+    font-size: 1.75rem;
+    color: #264653;
+}
+
+.card__date{
+    font-size: 0.85rem;
+    color: #424242;
+}
+
+.card__text{
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* ========== */
+
+/* Tour */
+
+.main-index__tour{
+    display: none;
+}
+
+/* ========================= */
+
+/* BIOGRAFÍA */
+
+.about{
+    margin: auto;
+    width: 800px;
+    display: flex;
+        flex-direction: column;
+}
+
+.abstract{
+    background-color: #e9c46a;
+    border-top: inset 10px #e76f51;
+    border-left: inset 10px #e76f51;
+    border-right: inset 10px #e76f51;
+    margin: 10px 30px 0 30px;
+    z-index: 1;
+}
+
+.abstract h3{
+    margin: 20px;
+}
+
+.abstract__video{
+    margin: 20px;
+    width: 25%;
+    float: left;
+}
+
+.abstract__paragraphs{
+    margin: 0px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.abstract__paragraphs p{
+    margin: 20px;
+}
+
+.personal-life{
+    background-color: #e9c46a;
+    border-top: solid 1px #e9c46a;;
+    border-left: inset 10px #e76f51;
+    border-bottom: inset 10px #e76f51;
+    border-right: inset 10px #e76f51;
+    margin: 0 30px 0px 30px;
+}
+
+.personal-life h4{
+    margin: 20px;
+    color: #264653;
+}
+
+.personal-life__image{
+    margin: 20px;
+    width: 25%;
+    float: right;
+}
+
+.personal-life__paragraphs{
+    margin: 0px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.personal-life__paragraphs p{
+    margin: 10px;
+}
+
+/* ========================= */
+
+/* MÚSICA */
+
+/* Discografía */
+
+.discography{
+    margin: auto;
+    width: 95%;
+}
+
+/* Álbumes de estudio */
+.studio-albums{
+    margin: 0 20px;
+    z-index: 1;
+}
+.studio-albums__card{
+    margin: 20px 20px 0 20px;
+    padding: 0 20px;
+    background-color: #e9c46a;
+    border: inset 10px #e76f51;
+}
+.studio-albums__card h3{
+    padding: 20px 0;
+}
+
+.studio-albums__card--top{
+    display: flex;
+}
+
+.studio-albums__card--cover{
+    width: 160px;
+    height: 160px;
+    margin: 10px 0;
+}
+.studio-albums__card--data{
+    margin: 0 30px;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+}
+
+/* ========================= */
+
+/* MEDIA */
+
+.main-media{
+    width: 100%;
+    display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        gap: 10px 10px;
+        grid-template-areas:
+            "main-media__new-videos"
+            "main-media__new-photos";
+}
+
+/* ========== */
+
+/* Nuevos videos */
+
+.main-media__new-videos{
+    grid-area: main-media__new-videos;
+        justify-self: center;
+        align-self: center;
+}
+
+.main-media__new-videos iframe{
+    display: flex;
+    margin: auto;
+}
+
+/* ========== */
+
+/* Carrusel de imágenes */
+
+.main-media__new-photos{
+    grid-area: main-media__new-photos;
+    margin: auto;
+    width: 90%;
+}
+.main-media__new-photos h2{
+    text-align: center;
+}
+.main-media__new-photos--gallery{
+    display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center
+}
+.main-media__new-photos--gallery img{
+    margin: 20px;
+    width: 450px;
+    opacity: .75;
+    border: solid 5px #f4a261;
+    transition: all 1s;
+}
+.main-media__new-photos--gallery img:hover{
+    opacity: 1;
+    border: inset 5px #e76f51;
+    transform: scale(1.1,1.1);
+}
+
+/* ========================= */
+
+/* CONTACTO */
+
+/* Formulario */
+.main-contact__form{
+    margin: auto;
+    padding: 20px;
+    width: 1000px;
+}
+.main-contact__form h2{
+    text-align: center;
+}
+.form{
+    padding: 10px;
+    background-color: #e9c46a;
+    border: inset 10px #e76f51;
+}
+fieldset{
+    margin: 20px;
+    border: double 5px #f4a261;
+}
+.form__title{
+    padding: 5px;
+}
+.form__name{
+    margin: 20px;
+    width: 375px;
+    display: inline-block;
+}
+.form__name--label{
+    padding: 0 10px 0 0;
+    font-weight: bold;
+}
+.form__name--input{
+    font-size: 1rem;
+    width: 275px;
+}
+.form__last-name{
+    margin: 20px;
+    width: 375px;
+    display: inline-block;
+}
+.form__last-name--label{
+    padding: 0 10px 0 0;
+    font-weight: bold;
+}
+.form__last-name--input{
+    font-size: 1rem;
+    width: 275px;
+}
+.form__e-mail{
+    margin: 20px;
+}
+.form__e-mail--label{
+    padding: 0 10px 0 0;
+    font-weight: bold;
+}
+.form__e-mail--input{
+    font-size: 1rem;
+    width: 300px;
+}
+.form__date-of-birth{
+    margin: 35px 20px;
+}
+.form__date-of-birth--label{
+    padding: 0 10px 0 0;
+    font-weight: bold;
+}
+.form__date-of-birth--input{
+    font-size: 1rem;
+}
+.form__sex{
+    margin: 30px 20px 20px 20px;
+}
+.form__sex--label{
+    padding: 0 10px 0 0;
+    font-weight: bold;
+    display: block;
+}
+.form__sex--input{
+    font-size: 1rem;
+    margin: 0 10px 0 20px;
+}
+.form__subject{
+    margin: 20px;
+}
+.form__subject--label{
+    padding: 0 10px 10px 0;
+    font-weight: bold;
+    display: block;
+}
+.form__subject--select{
+    font-size: 1rem;
+    width: 300px;
+}
+.form__message{
+    margin: 20px;
+}
+.form__message--label{
+    padding: 0 10px 10px 0;
+    font-weight: bold;
+    display: block;
+}
+.form__message--textarea{
+    font-size: 1rem;
+    width: 300px;
+}
+.button{
+    margin: 20px 0 20px 20px;
+    padding: 10px 20px;
+    background-color: #E76F51;
+    color: white;
+    /* text-decoration: none; */
+    text-align: center;
+    font-family: 'Prompt', sans-serif;
+    /* font-size: 1.75rem; */
+}
+
+/* ================================================== */
+
+/* FOOTER */
+
+.footer {
+    grid-area: footer;
+    width: 100%;
+    background: #2a9d8f;
+    background: linear-gradient(180deg, #2a9d8f 0%, #264653 25%, #264653 100%);
+    display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        gap: 10px 10px;
+        grid-template-areas:
+            "footer__social-media"
+            "footer__legal"
+        ;
+}
+
+/* ========== */
+
+/* Redes sociales */
+
+.footer__social-media{
+    margin: 0 20px;
+    padding: 30px 0 0 0;
+    text-align: right;
+    grid-area: footer__social-media;
+        justify-self: center;
+        align-self: center;
+}
+
+.social-media__unordered-list{
+    list-style-type: none;
+}
+
+.social-media__unordered-list--item{
+    display: inline-block;
+    margin: 7.5px;
+}
+
+.social-media__icon{
+    width: 24px;
+}
+
+/* ========== */
+
+/* Legales */
+
+.footer__legal{
+    padding: 0 0 20px 0;
+    color: #e9c46a;
+    text-align: center;
+    font-size: small;
+    grid-area: footer__legal;
+        justify-self: center;
+        align-self: center;
+}
+
+/* ================================================== */
+/* ================================================== */
+
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 768px) {
+
+    /* INDEX */
+    /* Tour */
+    /* Para que aparezca la sección de Tour (de lo contrario las fechas se verían muy chicas) */
+
+    .main-index{
+        width: 100%;
+        display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, auto);
+            gap: 10px 10px;
+            grid-template-areas:
+                "main-index__carousel"
+                "main-index__short-news"
+                "main-index__tour"
+            ;
+    }
+
+    .main-index__tour{
+        grid-area: main-index__tour;
+            justify-self: center;
+            align-self: center;
+        display: block;
+    }
+
+    .main-index__tour img{
+        display: flex;
+        margin: auto;
+    }
+
+    /* FOOTER */
+    /* Redes sociales */
+
+    .social-media__icon{
+        width: 32px;
+    }
+
+}
+
+/* ========== */
+
+@media only screen and (min-width: 992px) {
+
+    /* HEADER */
+    /* Para que quede mejor el header en pantallas grandes */
+
+    /* Menú y Tienda */
+
+    .navbar-nav{
+        justify-content: center;
+    }
+
+    /* ===== */
+
+    /* Menú */
+
+    /* Le doy aire al Logo */
+    /* Modificación a la class="navbar-collapse" de Bootstrap */
+    .header .container-fluid .navbar-collapse{
+        padding: 0 0 0 100px;
+    }
+
+    .header-nav__menu{
+        width: 75%;
+    }
+
+    .header-nav__menu--item-link:hover{
+        background: #e76f51;
+        background: linear-gradient(90deg, #e76f51 0%, #992204 5%, #992204 95%, #e76f51 100%);
+    }
+
+    /* ===== */
+
+    /* Tienda */
+
+    .header-nav__shop{
+        margin: 0 0 0 0;
+    }
+
+    .header-nav__shop--item-link:hover{
+        background: #f4a261;
+        background: linear-gradient(90deg, #f4a261 0%, #8c3f01 5%, #8c3f01 95%, #f4a261 100%);
+    }
+
+}
+
+/* ================================================== */
+
+/*
+CSV
+#264653,#2a9d8f,#e9c46a,#f4a261,#e76f51
+*/
